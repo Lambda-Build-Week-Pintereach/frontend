@@ -52,7 +52,7 @@ export default function App() {
 
   const postLoginUser = newLoginUser => {
     axios
-      .post('https://reqres.in/api/users', newLoginUser)
+      .post('https://pintereach1.herokuapp.com/api/login', newLoginUser)
       .then((res) => {
         console.log(res.data)
         setLoginUser([...loginUser, res.data]);
@@ -65,7 +65,7 @@ export default function App() {
 
   const postRegisterUser = newRegisterUser => {
     axios
-      .post('https://reqres.in/api/users', newRegisterUser)
+      .post('https://pintereach1.herokuapp.com/api/register', newRegisterUser)
       .then((res) => {
         console.log(res.data)
         setRegisterUser([...registerUser, res.data]);

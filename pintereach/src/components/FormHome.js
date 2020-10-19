@@ -80,7 +80,7 @@ export default function Form() {
       });
   }
 
-  // VERYIFY TOKEN // 
+  // VERIFY TOKEN // 
     // axios
     //   .get('https://pintereach1.herokuapp.com/api/validate')
     //   .then((res) => {

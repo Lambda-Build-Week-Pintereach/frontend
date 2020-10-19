@@ -81,6 +81,20 @@ button#submit {
     margin-top: 23px;
     background-color: rgb(156, 20, 27);
 }
+#home {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    text-align: center;
+    color: rgba(255,255,255,1);
+    padding: 8px 0px;
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 23px;
+    background-color: rgb(156, 20, 27);
+}
 
 /* FORM POSITIONING AND ANIMATION */
 form#registerForm{

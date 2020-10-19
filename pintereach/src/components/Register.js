@@ -1,11 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
 import '../App.css'
-
-// COMPONENT STYLING
-const RegisterTitle = styled.h1`
-    font-size: 25px;
-`
 
 export default function Signup(props){
     const { values, submit, change, disabled, errors } = props;
@@ -22,9 +16,7 @@ export default function Signup(props){
 
     return (
         <div>
-            <form onSubmit={onSubmit}>
-
-            <RegisterTitle>Register:</RegisterTitle>
+            <form id="registerform" onSubmit={onSubmit}>
 
             {/* RENDER VALIDATION ERRORS */}
             <div className="errors">{errors.username}</div>
@@ -38,6 +30,7 @@ export default function Signup(props){
                     onChange={onChange}
                     name="username"
                     type="text"
+                    id="username"
                     />
                 </label>
 
@@ -47,6 +40,7 @@ export default function Signup(props){
                     onChange={onChange}
                     name="email"
                     type="email"
+                    id="email"
                     />
                 </label>
 
@@ -56,11 +50,12 @@ export default function Signup(props){
                     onChange={onChange}
                     name="password"
                     type="text"
+                    id="password"
                     />
                 </label>
 
                 {/* DISABLE BUTTON */}
-                <button id='registerBtn' disabled={disabled}>Register</button>
+                <button id='submit' disabled={disabled}>Submit</button>
             </form>
         </div>
     )

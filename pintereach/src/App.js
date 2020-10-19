@@ -5,12 +5,8 @@ import Login from './components/Login';
 import Signup from './components/Register';
 import loginSchema from './validation/LoginSchema';
 import registerSchema from './validation/RegisterSchema';
-// import Home from './components/Home'
 import * as yup from 'yup';
 import './App.css';
-// import styled from 'styled-components';
-
-// COMPONENT STYLING
 
 // INITAL VALUES OF LOGIN FORM
 const initialLoginValues = {
@@ -150,7 +146,7 @@ export default function App() {
     })
   }, [loginValues])
 
-  // CHANGING STATS OF REGISTER BUTTON
+  // CHANGING STATUS OF REGISTER BUTTON
   useEffect(() => {
     registerSchema.isValid(registerValues).then(valid => {
       setRegisteredDisabled(!valid);
@@ -184,28 +180,7 @@ export default function App() {
             />
           </Route>
         </div>
-    </div>
-      {/* <Route>
-        <Home />
-      </Route>
-      <Route path="/login">
-      <Login 
-      values={loginValues}
-      errors={loginErrors}
-      disabled={loginDisabled}
-      submit={loginFormSubmit}
-      change={loginInputChange}
-      />  
-      </Route>
-      <Route path="/register">
-      <Signup 
-      values={registerValues}
-      errors={registerErrors}
-      disabled={registerDisabled}
-      submit={registerFormSubmit}
-      change={registerInputChange}
-      />
-      </Route> */}
+      </div>
     </div>
   );
 }

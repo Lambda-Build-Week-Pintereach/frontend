@@ -96,8 +96,10 @@ form{
 
 /* ERROR STYLING */
   .errors{
-      color: red;
+      color: rgb(12, 4, 2);
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-bottom: .5rem;
+      font-size: 15px;
   }

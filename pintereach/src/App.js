@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Login from './components/Login';
 import Signup from './components/Register';
 import loginSchema from './validation/LoginSchema';
-import registerSchema from './validation/RegisterSchema'
+import registerSchema from './validation/RegisterSchema';
+// import Home from './components/Home'
 import * as yup from 'yup';
+import './App.css';
 // import styled from 'styled-components';
 
 // COMPONENT STYLING
@@ -155,14 +158,46 @@ export default function App() {
   }, [registerValues])
 
   return (
-    <div>
+    <div className="container">
+      <div className="login-register-wrapper">
+        <div className="nav-buttons">
+          <Link to="login"><button id='loginBtn'>Log In</button></Link>
+          <Link to="register"><button id='registerBtn'>Register</button></Link>
+        </div>
+        <div className="form-group">
+          <Route path="/login">
+            <Login 
+            values={loginValues}
+            errors={loginErrors}
+            disabled={loginDisabled}
+            submit={loginFormSubmit}
+            change={loginInputChange}
+            />  
+          </Route>
+          <Route path="/register">
+            <Signup 
+            values={registerValues}
+            errors={registerErrors}
+            disabled={registerDisabled}
+            submit={registerFormSubmit}
+            change={registerInputChange}
+            />
+          </Route>
+        </div>
+    </div>
+      {/* <Route>
+        <Home />
+      </Route>
+      <Route path="/login">
       <Login 
       values={loginValues}
       errors={loginErrors}
       disabled={loginDisabled}
       submit={loginFormSubmit}
       change={loginInputChange}
-      />
+      />  
+      </Route>
+      <Route path="/register">
       <Signup 
       values={registerValues}
       errors={registerErrors}
@@ -170,6 +205,7 @@ export default function App() {
       submit={registerFormSubmit}
       change={registerInputChange}
       />
+      </Route> */}
     </div>
   );
 }

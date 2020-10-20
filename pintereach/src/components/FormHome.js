@@ -8,7 +8,7 @@ import registerSchema from '../validation/RegisterSchema';
 import * as yup from 'yup';
 import '../App.css';
 
-// INITAL VALUES OF LOGIN FORM
+// INITAL VALUES OF LOGIN FORM //
 const initialLoginValues = {
   username: '',
   password: '',
@@ -19,7 +19,7 @@ const initialLoginErrors = {
 }
 const initialLoginDisabled = true
 
-// INITIAL VALUES OF REGISTER FORM
+// INITIAL VALUES OF REGISTER FORM //
 const initialRegisterValues = {
   username: '',
   email: '',
@@ -32,21 +32,21 @@ const initialRegisterErrors = {
 }
 const initialRegisteredDisabled = true
 
-// INITIAL USER
+// INITIAL USER //
 const initialLoginUser = []
 const initialRegisterUser = []
 
 export default function Form() {
-  // SET USER STATE
+  // SET USER STATE //
   const [loginUser, setLoginUser] = useState(initialLoginUser)
   const [registerUser, setRegisterUser] = useState(initialRegisterUser)
-  // SET VALUE STATE
+  // SET VALUE STATE //
   const [loginValues, setLoginValues] = useState(initialLoginValues)
   const [registerValues, setRegisterValues] = useState(initialRegisterValues)
-  // SET ERROR STATE
+  // SET ERROR STATE //
   const [loginErrors, setLoginErrors] = useState(initialLoginErrors)
   const [registerErrors, setRegisterErrors] = useState(initialRegisterErrors)
-  // SET BUTTON STATUS STATE
+  // SET BUTTON STATUS STATE //
   const [loginDisabled, setLoginDisabled] = useState(initialLoginDisabled)
   const [registerDisabled, setRegisteredDisabled] = useState(initialRegisteredDisabled)
 
@@ -58,13 +58,14 @@ export default function Form() {
         console.log(res.data)
         setLoginUser([...loginUser, res.data]);
         setLoginValues(initialLoginValues);
+        // useHistory to reroute to appropriate page
       })
       .catch((err) => {
         console.log(err);
       });
   }
 
-//   CREATE USER AND RETURN TOKEN
+ // CREATE USER AND RETURN TOKEN //
   const postRegisterUser = newRegisterUser => {
     axios
       .post('https://pintereach1.herokuapp.com/api/register', newRegisterUser)
@@ -72,13 +73,14 @@ export default function Form() {
         console.log(res.data)
         setRegisterUser([...registerUser, res.data]);
         setRegisterValues(initialRegisterValues);
+        // useHistory to reroute to appropriate page
       })
       .catch((err) => {
         console.log(err);
       });
   }
 
-  // VERYIFY TOKEN // 
+  // VERIFY TOKEN // 
     // axios
     //   .get('https://pintereach1.herokuapp.com/api/validate')
     //   .then((res) => {
@@ -151,14 +153,14 @@ export default function Form() {
     postRegisterUser(newRegisterUser);
   }
 
-  // CHANGING STATUS OF LOGIN BUTTON
+  // CHANGING STATUS OF LOGIN BUTTON //
   useEffect(() => {
     loginSchema.isValid(loginValues).then(valid => {
       setLoginDisabled(!valid);
     })
   }, [loginValues])
 
-  // CHANGING STATUS OF REGISTER BUTTON
+  // CHANGING STATUS OF REGISTER BUTTON //
   useEffect(() => {
     registerSchema.isValid(registerValues).then(valid => {
       setRegisteredDisabled(!valid);

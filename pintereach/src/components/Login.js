@@ -1,8 +1,15 @@
 import React from 'react';
+// import { useHistory } from 'react-router-dom';
 import '../App.css'
 
 export default function Login(props) {
     const { values, submit, change, disabled, errors } = props;
+
+    // const history = useHistory()
+
+    // const routeToApp = () => {
+    //     history.push("/")
+    // }
 
     const onSubmit = (evt) => {
         evt.preventDefault();
@@ -44,6 +51,9 @@ export default function Login(props) {
 
             {/* DISABLE BUTTON */}
             <button id='submit' disabled={disabled}>Submit</button>
+            {/* add to button ^ onClick={routeToApp} */}
+            <button id='home'>Home</button>
+            {/* add route to home page */}
 
         </form>
     )

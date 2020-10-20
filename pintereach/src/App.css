@@ -10,7 +10,7 @@ html, body, body * {
 
 /* LOGIN & REGISTER FORMS */
 body {
-    background-image: url("images/pic03.jpg");
+    /* background-image: url("images/pic03.jpg"); */
     background-size: cover;
     background-position: center center;
 }

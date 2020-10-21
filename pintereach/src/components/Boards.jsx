@@ -37,7 +37,7 @@ class Boards extends React.Component {
   render() {
     return (
       <div className="main">
-        <div className="add-study-form">
+        <div className="add-article-form">
           <h2>
    
             Create a Board

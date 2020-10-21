@@ -30,6 +30,7 @@ const NavBar = () => {
       <NavLink to="/profile" >
         Profile
       </NavLink>
+    
     </div>
   );
 };

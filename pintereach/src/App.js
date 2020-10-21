@@ -10,6 +10,7 @@ import PrivateRoute from "./components/utils/PrivateRoute";
 // import Signup from "./components/Register";
 import UserHome from "./components/UserHome";
 import UserProfile from "./components/UserProfile";
+import BoardFeed from "./components/BoardFeed.jsx"
 
 export default function App() {
   return (
@@ -19,13 +20,16 @@ export default function App() {
           <NavBar />
         </div>
         <div className="body">
+
+
+
           {/* <Route exact path="/" component={Signup} />
           <Route exact path="/login" component={Login} /> */}
           <Route exact path ="" component={FormHome}/>
           <PrivateRoute exact path="/home" component={UserHome} />
           <PrivateRoute exact path="/add-pin" component={AddArticleForm} />
           <PrivateRoute exact path="/add-board" component={Boards} />
-          <PrivateRoute exact path="/profile" component={UserProfile} />
+
         </div>
       </div>
     </Router>

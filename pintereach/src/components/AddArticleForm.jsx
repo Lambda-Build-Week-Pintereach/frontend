@@ -9,11 +9,13 @@ import { addArticle } from "./actions";
 class AddArticleForm extends React.Component {
   state = {
     article: {
+    id: "",
+      url: "",
       title: "",
-      cover_page: "whatever a coverpage is",
-      link: "",
-      user_id: "",
-      categories_id: ""
+      image: "",
+      description: "",
+      board_id:"",
+      user_id:""
     }
   };
 
@@ -32,9 +34,8 @@ class AddArticleForm extends React.Component {
     this.props.addArticle(this.state.article);
     this.props.history.push("/home");
     this.setState({
-      study: {
+      article: {
         title: "testing",
-        cover_page: "whatever a coverpage is",
         link: "",
         user_id: this.props.id,
         categories_id: ""
@@ -81,9 +82,9 @@ class AddArticleForm extends React.Component {
                 {this.props.addingArticle ? (
                   <Loader
                     type="TailSpin"
-                    color="white"
-                    height={18}
-                    width={18}
+                    color="red"
+                    height={8}
+                    width={8}
                   />
                 ) : (
                   "Add Pin"

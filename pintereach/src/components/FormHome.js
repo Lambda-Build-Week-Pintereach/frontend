@@ -8,7 +8,7 @@ import registerSchema from '../validation/RegisterSchema';
 import * as yup from 'yup';
 import '../App.css';
 
-// INITAL VALUES OF LOGIN FORM //
+// INITAL VALUES OF LOGIN FORM // STEP 1
 const initialLoginValues = {
   username: '',
   password: '',
@@ -40,7 +40,7 @@ export default function Form() {
   // SET USER STATE //
   const [loginUser, setLoginUser] = useState(initialLoginUser)
   const [registerUser, setRegisterUser] = useState(initialRegisterUser)
-  // SET VALUE STATE //
+  // SET VALUE STATE // STEP 2
   const [loginValues, setLoginValues] = useState(initialLoginValues)
   const [registerValues, setRegisterValues] = useState(initialRegisterValues)
   // SET ERROR STATE //
@@ -80,18 +80,8 @@ export default function Form() {
       });
   }
 
-  // VERIFY TOKEN // 
-    // axios
-    //   .get('https://pintereach1.herokuapp.com/api/validate')
-    //   .then((res) => {
-    //     console.log(res.data)
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-
-  const loginInputChange = (name, value) => {
-    yup
+  const loginInputChange = (name, value) => { // STEP 7
+    yup // STEP 8
       .reach(loginSchema, name)
       .validate(value)
       .then(() => {
@@ -107,7 +97,7 @@ export default function Form() {
         });
       });
   
-    setLoginValues({
+    setLoginValues({ // STEP 9
       ...loginValues,
       [name]: value 
     });
@@ -136,7 +126,7 @@ export default function Form() {
       });
   }
 
-  const loginFormSubmit = () => {
+  const loginFormSubmit = () => { 
     const newLoginUser = {
       username: loginValues.username.trim(),
       password: loginValues.password.trim(),
@@ -177,7 +167,7 @@ export default function Form() {
         <div className="form-group">
           <Route path="/login">
             <Login 
-            values={loginValues}
+            values={loginValues} // STEP 3 // STEP 10
             errors={loginErrors}
             disabled={loginDisabled}
             submit={loginFormSubmit}

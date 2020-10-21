@@ -3,12 +3,18 @@ import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Login from './Login';
 import Signup from './Register';
+import Jokes from './Jokes';
 import loginSchema from '../validation/LoginSchema';
 import registerSchema from '../validation/RegisterSchema';
 import * as yup from 'yup';
 import '../App.css';
+import styled from 'styled-components';
 
-// INITAL VALUES OF LOGIN FORM // STEP 1
+const StyledJokes = styled.div`
+  color: black;
+`
+
+// INITAL VALUES OF LOGIN FORM //
 const initialLoginValues = {
   username: '',
   password: '',
@@ -49,6 +55,8 @@ export default function Form() {
   // SET BUTTON STATUS STATE //
   const [loginDisabled, setLoginDisabled] = useState(initialLoginDisabled)
   const [registerDisabled, setRegisteredDisabled] = useState(initialRegisteredDisabled)
+  // SET ARTICLES STATE //
+  const [jokes, setJokes] = useState([])
 
   // AUTHENTICATE USER AND RETURN TOKEN // 
   const postLoginUser = newLoginUser => {
@@ -80,8 +88,21 @@ export default function Form() {
       });
   }
 
-  const loginInputChange = (name, value) => { // STEP 7
-    yup // STEP 8
+  // FETCH JOKES //
+  useEffect(() => {
+    axios.get('https://official-joke-api.appspot.com/random_joke')
+      .then(res => {
+        // setJokes(res.data)
+        console.log(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  } ,[])
+
+  // HELPER FUNCTIONS //
+  const loginInputChange = (name, value) => {
+    yup
       .reach(loginSchema, name)
       .validate(value)
       .then(() => {
@@ -97,7 +118,7 @@ export default function Form() {
         });
       });
   
-    setLoginValues({ // STEP 9
+    setLoginValues({
       ...loginValues,
       [name]: value 
     });
@@ -167,7 +188,7 @@ export default function Form() {
         <div className="form-group">
           <Route path="/login">
             <Login 
-            values={loginValues} // STEP 3 // STEP 10
+            values={loginValues}
             errors={loginErrors}
             disabled={loginDisabled}
             submit={loginFormSubmit}
@@ -183,6 +204,15 @@ export default function Form() {
             change={registerInputChange}
             />
           </Route>
+          <StyledJokes>
+            {jokes.map(jokes => {
+              return <Jokes 
+              key={jokes.id}
+              setup={jokes.setup}
+              punchline={jokes.punchline}
+              />
+            })}
+          </StyledJokes>
         </div>
       </div>
     </div>

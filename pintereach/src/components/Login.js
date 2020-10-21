@@ -3,7 +3,7 @@ import React from 'react';
 import '../App.css'
 
 export default function Login(props) {
-    const { values, submit, change, disabled, errors } = props; // STEP 4
+    const { values, submit, change, disabled, errors } = props;
 
     // const history = useHistory()
 
@@ -16,9 +16,9 @@ export default function Login(props) {
         submit();
     };
 
-    const onChange = (evt) => { // STEP 6
+    const onChange = (evt) => {
         const { name, value } = evt.target;
-        change(name, value); // STEP 6.5
+        change(name, value);
     };
 
     return (
@@ -31,8 +31,8 @@ export default function Login(props) {
             {/* TEXT INPUTS */}
             <label>Username:
                 <input 
-                value={values.username} // STEP 5
-                onChange={onChange} // STEP 5.5
+                value={values.username}
+                onChange={onChange}
                 name="username"
                 type="text"
                 id="username"
@@ -44,7 +44,7 @@ export default function Login(props) {
                 value={values.password}
                 onChange={onChange}
                 name="password"
-                type="text"
+                type="password"
                 id="password"
                 />
             </label>

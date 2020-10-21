@@ -7,10 +7,10 @@ import FormHome from "./components/FormHome";
 // import Login from "./components/Login";
 import NavBar from "./components/NavBar";
 import PrivateRoute from "./components/utils/PrivateRoute";
-// import Signup from "./components/Register";
 import UserHome from "./components/UserHome";
 import UserProfile from "./components/UserProfile";
-import BoardFeed from "./components/BoardFeed.jsx"
+import BoardFeed from "./components/BoardFeed.jsx";
+// import Register from './components/Register';
 
 export default function App() {
   return (
@@ -23,7 +23,7 @@ export default function App() {
 
 
 
-          {/* <Route exact path="/" component={Signup} />
+          {/* <Route exact path="/" component={Register} />
           <Route exact path="/login" component={Login} /> */}
           <Route exact path ="" component={FormHome}/>
           <PrivateRoute exact path="/home" component={UserHome} />

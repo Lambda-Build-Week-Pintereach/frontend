@@ -64,8 +64,6 @@ export default function Signup(props){
                 {/* DISABLE BUTTON */}
                 <button id='submit' disabled={disabled}>Submit</button>
                 {/* add to button ^ onClick={routeToApp} */}
-                <button id='home'>Home</button>
-                {/* add route to home page */}
 
             </form>
         </div>

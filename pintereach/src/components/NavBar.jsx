@@ -30,6 +30,9 @@ const NavBar = () => {
       <NavLink to="/profile" >
         Profile
       </NavLink>
+      <NavLink to="/board-feed" >
+        BoardFeed
+      </NavLink>
     </div>
   );
 };

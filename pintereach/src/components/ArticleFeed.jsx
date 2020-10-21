@@ -20,7 +20,7 @@ class ArticleFeed extends React.Component {
           <div className="article-card" key={article.id}>
             <div className="title">
               <h3>{article.title}</h3>
-              <p>@{article.postedBy}</p>
+           
             </div>
             <a
               href={article.link}

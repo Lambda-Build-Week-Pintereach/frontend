@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link, Route } from "react-router-dom";
 import styled from "styled-components";
 
-import { deleteArticle, getData, getCategory, getData2 } from "./actions";
+import { deleteArticle, getArticle, getCategory, getArticles } from "./actions";
 import ArticleFeed from "./ArticleFeed";
 import BoardFeed from "./BoardFeed";
 
@@ -19,9 +19,9 @@ class UserHome extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getData(this.props.id);
+    this.props.getArticle(this.props.id);
     this.props.getCategory(this.props.id);
-    this.props.getData2();
+    this.props.getArticles();
 
     // setTimeout(() => this.setState({ showMessage: false }), 2000);
   }
@@ -52,7 +52,7 @@ class UserHome extends React.Component {
             exact
             path="/home"
             render={props => (
-              <div className="home2">
+              <div className="">
                 <BoardFeed
                   {...props}
                   boards={this.props.boards}
@@ -118,5 +118,5 @@ const mapStateToProps = ({
 
 export default connect(
   mapStateToProps,
-  { getData, deleteArticle, getCategory, getData2 }
+  { getArticle, deleteArticle, getCategory, getArticles }
 )(UserHome);

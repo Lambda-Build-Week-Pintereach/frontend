@@ -7,16 +7,16 @@ import {
     DELETE_SUCCESS,
     FETCH_CATEGORIES_START,
     FETCH_CATEGORIES_SUCCESS,
-    FETCH_DATA_FAILURE,
-    FETCH_DATA_START,
-    FETCH_DATA_SUCCESS,
+    FETCH_ARTICLE_FAILURE,
+    FETCH_ARTICLE_START,
+    FETCH_ARTICLE_SUCCESS,
     LOGIN_START,
     LOGIN_SUCCESS,
     LOGOUT_START,
     LOGOUT_SUCCESS,
     SIGNUP_START,
-    FETCH_DATA2_START,
-    FETCH_DATA2_SUCCESS
+    FETCH_ARTICLES_START,
+    FETCH_ARTICLES_SUCCESS
   } from "../actions";
   
   const initialState = {
@@ -60,7 +60,7 @@ import {
           message: action.payload.message,
           id: action.payload.id
         };
-      case FETCH_DATA_START:
+      case FETCH_ARTICLE_START:
         return {
           ...state,
           fetchingArticles: true
@@ -79,12 +79,12 @@ import {
           fetchingBoards: false,
           boards: action.payload
         };
-      case FETCH_DATA2_START:
+      case FETCH_ARTICLES_START:
         return {
           ...state,
           fetchingAllArticles: true
         };
-      case FETCH_DATA2_SUCCESS:
+      case FETCH_ARTICLES_SUCCESS:
         return {
           ...state,
           error: "",
@@ -92,7 +92,7 @@ import {
           fetchingAllArticles: false,
           allArticles: action.payload
         };
-      case FETCH_DATA_SUCCESS:
+      case FETCH_ARTICLE_SUCCESS:
         return {
           ...state,
           error: "",
@@ -100,7 +100,7 @@ import {
           fetchingArticles: false,
           articles: action.payload
         };
-      case FETCH_DATA_FAILURE:
+      case FETCH_ARTICLE_FAILURE:
         return {
           ...state,
           error: action.payload.status,

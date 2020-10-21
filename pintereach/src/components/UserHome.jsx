@@ -19,29 +19,29 @@ class UserHome extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getArticle(this.props.id);
+    this.props.getArticles(this.props.id);
     this.props.getCategory(this.props.id);
-    this.props.getArticles();
+    this.props.getArticle();
 
-    // setTimeout(() => this.setState({ showMessage: false }), 2000);
+    setTimeout(() => this.setState({ showMessage: false }), 2000);
   }
 
   render() {
-    if (this.props.fetchingArticles) {
-      return (
-        <div className="loader">
-          <Loader type="TailSpin" color="#005995" height={40} width={40} />
-        </div>
-      );
-    }
+    // if (this.props.fetchingArticles) {
+    //   return (
+    //     <div className="loader">
+    //       <Loader type="TailSpin" color="#005995" height={40} width={40} />
+    //     </div>
+    //   );
+    // }
 
-    if (this.state.showMessage) {
-      return (
-        <div className="message">
-          <p>{this.props.message}</p>
-        </div>
-      );
-    }
+    // if (this.state.showMessage) {
+    //   return (
+    //     <div className="message">
+    //       <p>{this.props.message}</p>
+    //     </div>
+    //   );
+    // }
 
     return (
       <div className="main">
@@ -72,7 +72,7 @@ class UserHome extends React.Component {
           <Link to="/add-pin">
             <button className="last">
            
-              Add Pin
+              Add Article
             </button>
           </Link>
           <Route
@@ -81,7 +81,7 @@ class UserHome extends React.Component {
             render={props => (
               <div className="home">
                 <div className="title-block">
-                  <h2>Your Pins</h2>
+                  <h2>Your Articles</h2>
                   <div className="btns" />
                 </div>
                 <ArticleFeed

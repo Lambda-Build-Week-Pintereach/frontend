@@ -31,8 +31,9 @@ class Boards extends React.Component {
       body: {
         name: ""
       }
-    });
+    }); 
   };
+
 
   render() {
     return (
@@ -59,7 +60,7 @@ class Boards extends React.Component {
                     type="TailSpin"
                     color="white"
                     height={18}
-                    width={18}
+                    width={10}
                   />
                 ) : (
                   "Add Board"

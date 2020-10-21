@@ -26,9 +26,7 @@ class BoardFeed extends React.Component {
 
               <a
                 href={article.link}
-                target="_blank"
-                without
-                rel="noopener noreferrer"
+              
               >
                 {article.link}
               </a>

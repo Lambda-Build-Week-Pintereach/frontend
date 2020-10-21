@@ -16,19 +16,19 @@ const NavBar = () => {
         Pintereach
       </h1>
       <NavLink exact to="/home" >
-        Home
+   
       </NavLink>
-     
+
       <NavLink exact to="/add-board" >
-      Add-Board
+     
       </NavLink>
 
       <NavLink exact to="/add-pin" >
-        Add Pin
+    
       </NavLink>
 
       <NavLink to="/profile" >
-        Profile
+     
       </NavLink>
     </div>
   );

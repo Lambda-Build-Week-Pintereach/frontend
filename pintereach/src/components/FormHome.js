@@ -7,6 +7,7 @@ import loginSchema from '../validation/LoginSchema';
 import registerSchema from '../validation/RegisterSchema';
 import * as yup from 'yup';
 import '../App.css';
+import { signup } from "./actions"
 
 // INITAL VALUES OF LOGIN FORM //
 const initialLoginValues = {

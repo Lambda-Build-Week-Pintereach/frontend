@@ -3,7 +3,7 @@ import React from 'react';
 import '../App.css'
 
 export default function Login(props) {
-    const { values, submit, change, disabled, errors } = props;
+    const { values, submit, change, disabled, errors } = props; // STEP 4
 
     // const history = useHistory()
 
@@ -16,13 +16,13 @@ export default function Login(props) {
         submit();
     };
 
-    const onChange = (evt) => {
+    const onChange = (evt) => { // STEP 6
         const { name, value } = evt.target;
-        change(name, value); 
+        change(name, value); // STEP 6.5
     };
 
     return (
-        <form id="loginform" onSubmit={onSubmit}>
+        <form id="loginform" onSubmit={onSubmit}> 
 
             {/* RENDER VALIDATION ERRORS */}
             <div className="errors">{errors.username}</div>
@@ -31,8 +31,8 @@ export default function Login(props) {
             {/* TEXT INPUTS */}
             <label>Username:
                 <input 
-                value={values.username}
-                onChange={onChange}
+                value={values.username} // STEP 5
+                onChange={onChange} // STEP 5.5
                 name="username"
                 type="text"
                 id="username"

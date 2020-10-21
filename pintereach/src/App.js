@@ -1,37 +1,27 @@
-import React from 'react'
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./App.css";
-import AddArticleForm from "./components/AddArticleForm";
-import Boards from "./components/Boards";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import './App.css';
+import {Listarticle} from './components/ListArticle';
+import {Createarticle} from './components/CreateArticle';
+import {Editarticle} from './components/EditArticle';
+import {Detailarticle} from './components/DetailArticle';
 import FormHome from "./components/FormHome";
-// import Login from "./components/Login";
-import NavBar from "./components/NavBar";
-import PrivateRoute from "./components/utils/PrivateRoute";
-// import Signup from "./components/Register";
-import UserHome from "./components/UserHome";
-import UserProfile from "./components/UserProfile";
-import BoardFeed from "./components/BoardFeed.jsx"
+import { GlobalProvider } from './components/reducers/GlobalContext';
 
-export default function App() {
+function App() {
   return (
-    <Router>
-      <div className="app">
-        <div className="nav">
-          <NavBar />
-        </div>
-        <div className="body">
+    <GlobalProvider>
+       <header className="text-center"><h5>Pintereach</h5></header>
+       <Switch>
 
-
-
-          {/* <Route exact path="/" component={Signup} />
-          <Route exact path="/login" component={Login} /> */}
-          <Route exact path ="" component={FormHome}/>
-          <PrivateRoute exact path="/home" component={UserHome} />
-          <PrivateRoute exact path="/add-pin" component={AddArticleForm} />
-          <PrivateRoute exact path="/add-board" component={Boards} />
-
-        </div>
-      </div>
-    </Router>
+        <Route path="/" component={Listarticle} exact/>
+        <Route path="/create" component={Createarticle} exact/>
+        <Route path="/edit/:id" component={Editarticle} exact/>
+        <Route path="/detail/:id" component={Detailarticle} exact/>
+      </Switch>
+    </GlobalProvider>
   );
 }
+
+export default App;
+

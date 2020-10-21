@@ -2,7 +2,6 @@ import React from "react";
 import Loader from "react-loader-spinner";
 import { connect } from "react-redux";
 import styled from "styled-components";
-
 import { addArticle } from "./actions";
 
 
@@ -87,7 +86,7 @@ class AddArticleForm extends React.Component {
                     width={8}
                   />
                 ) : (
-                  "Add Pin"
+                  "Add Article"
                 )}
               </button>
             </form>

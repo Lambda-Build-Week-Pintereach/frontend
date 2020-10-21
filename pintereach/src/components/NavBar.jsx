@@ -24,7 +24,7 @@ const NavBar = () => {
       </NavLink>
 
       <NavLink exact to="/add-pin" >
-        Add Pin
+        Add Article
       </NavLink>
 
       <NavLink to="/profile" >

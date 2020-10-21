@@ -36,7 +36,7 @@ export const FETCH_ARTICLE_FAILURE = "FETCH_ARTICLE_FAILURE";
 export const getArticle = () => dispatch => {
   dispatch({ type: FETCH_ARTICLE_START });
   axios
-    .get("https://pintereach1.herokuapp.com/articles/:id", {
+    .get("https://pintereach1.herokuapp.com/articles/:id/", {
       headers: { Authorization: localStorage.getItem("token") }
     })
     .then(res => {
@@ -56,13 +56,16 @@ export const getArticles = () => dispatch => {
   axios
     .get("https://pintereach1.herokuapp.com/api/articles", {
       headers: { Authorization: localStorage.getItem("token") }
+      
     })
     .then(res => {
       dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: res.data });
+      
     })
     .catch(err => {
       dispatch({ type: FETCH_ARTICLES_FAILURE, payload: err.response });
     });
+
 };
 
 export const FETCH_CATEGORIES_START = "FETCH_CATERGORIES_START";
@@ -110,7 +113,7 @@ export const ADD_ARTICLE_FAILURE = "ADD_ARTICLE_FAILURE";
 export const addArticle = article => dispatch => {
   dispatch({ type: ADD_ARTICLE_START });
   axios
-    .post(`https://pintereach1.herokuapp.com/api/articles`, article, {
+    .put(`https://pintereach1.herokuapp.com/api/articles/:id`, article, {
       headers: { Authorization: localStorage.getItem("token") }
     })
     .then(res => {
@@ -133,6 +136,7 @@ export const addBoard = (name, id) => dispatch => {
     })
     .then(res => {
       dispatch({ type: ADD_BOARD_SUCCESS, payload: res.data });
+      console.log(res.data)
     })
     .catch(err => {
       console.log(err);

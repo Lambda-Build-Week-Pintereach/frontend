@@ -198,17 +198,19 @@ export default function Form() {
             change={registerInputChange}
             />
           </Route>
-          <div className="jokes">
-            {jokes.map(jokes => {
-              return <Jokes 
-              key={jokes.id}
-              setup={jokes.setup}
-              punchline={jokes.punchline}
-              />
-            })}
-          </div>
         </div>
       </div>
+      <div className="joke-container">
+            <div className="joke-wrapper">
+              {jokes.map(jokes => {
+                return <Jokes 
+                key={jokes.id}
+                setup={jokes.setup}
+                punchline={jokes.punchline}
+                />
+              })}
+            </div>
+          </div>
     </div>
   );
 }

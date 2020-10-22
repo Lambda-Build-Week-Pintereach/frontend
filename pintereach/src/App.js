@@ -12,6 +12,7 @@ function App() {
     <GlobalProvider>
        <header className="text-center"><h5>Pintereach</h5></header>
        <Switch>
+         <Route path="" component={FormHome}/>
         <Route path="/" component={Listarticle} exact/>
         <Route path="/create" component={Createarticle} exact/>
         <Route path="/edit/:id" component={Editarticle} exact/>

@@ -5,8 +5,8 @@ const Jokes = props => {
 
     return (
         <div>
-            <p>Joke: {setup}</p>
-            <p>Answer: {punchline}</p>
+            <p className="joke">{setup}</p>
+            <p className="answer">{punchline}</p>
         </div>
     )
 }

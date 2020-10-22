@@ -216,9 +216,20 @@ button.active{
   }
   
   /* CREATE ARTICLE  */
+  .form-control {
+    border: 1px solid gray;
+  }
   /* DETAIL ARTICLE  */
   /* EDIT ARTICLE */
   /* LIST ARTICLE */
+  .row{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+  .noList{
+
+  }
   
 
  

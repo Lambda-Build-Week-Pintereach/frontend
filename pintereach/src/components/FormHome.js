@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Login from './Login';
 import Signup from './Register';
+import Joke from './Jokes'
 import loginSchema from '../validation/LoginSchema';
 import registerSchema from '../validation/RegisterSchema';
 import * as yup from 'yup';
@@ -82,7 +83,7 @@ export default function Form() {
 
   // FETCH JOKE //
   useEffect(() => {
-    axios.get('https://official-joke-api.appspot.com/random_joke')
+    axios.get('https://official-joke-api.appspot.com/random_ten')
       .then(res => {
         setJokes(res.data)
       })
@@ -200,9 +201,13 @@ export default function Form() {
       </div>
       <div className="joke-container">
         <div className="joke-wrapper">
-            <p className="joke-title">Joke of the Day:</p>
-            <p className="joke">{jokes.setup}</p>
-            <p className="answer">{jokes.punchline}</p>
+            {jokes.map(jokes => {
+            return <Joke 
+            key={jokes.id} 
+            setup={jokes.setup}
+            punchline={jokes.punchline}
+            />
+            })}
         </div>
       </div>
     </div>

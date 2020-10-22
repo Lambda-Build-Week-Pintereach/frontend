@@ -1,15 +1,15 @@
 import React from 'react';
 import '../App.css'
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function Register(props){
     const { values, submit, change, disabled, errors } = props;
 
-    // const history = useHistory()
+    const history = useHistory()
 
-    // const routeToApp = () => {
-    //     history.push("/")
-    // }
+    const routeToApp = () => {
+        history.push("/")
+    }
 
     const onSubmit = (evt) => {
         evt.preventDefault();
@@ -62,8 +62,7 @@ export default function Register(props){
                 </label>
 
                 {/* DISABLE BUTTON */}
-                <button id='submit' disabled={disabled}>Submit</button>
-                {/* add to button ^ onClick={routeToApp} */}
+                <button id='submit' disabled={disabled} onClick={routeToApp}>Submit</button>
 
             </form>
         </div>

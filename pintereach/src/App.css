@@ -99,7 +99,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   height: 300px;
   width: 500px;
   margin-left: auto;
@@ -113,12 +113,15 @@ button:hover {
 }
 .joke-title{
   font-size: 22px;
+  padding: 15px;
 }
 .joke{
   font-size: 18px;
+  padding: 10px;
 }
 .answer{
   color: rgb(99, 26, 32);
+  padding: 10px;
 }
 
 /* NAVBAR BUTTONS */

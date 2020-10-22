@@ -9,6 +9,12 @@ export default yup.object().shape({
         .string()
         .required('Password is required')
         .min(6, 'Password must be at least 6 characters'),
+    // confirmPassword: yup
+    //     .string()
+    //     .required("Password confirmation is required.")
+    //     .when("password", {
+    //     is: password => (password && password.length > 0 ? true : false),
+    //     then: yup.string().oneOf([yup.ref("password")], "Password doesn't match")}),
     email: yup
         .string()
         .required('Email is required')

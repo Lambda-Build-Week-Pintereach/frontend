@@ -24,11 +24,13 @@ const initialRegisterValues = {
   username: '',
   email: '',
   password: '',
+  // confirmPassword: '',
 }
 const initialRegisterErrors = {
   username: '',
   email: '',
   password: '',
+  // confirmPassword: '',
 }
 const initialRegisteredDisabled = true
 
@@ -60,7 +62,6 @@ export default function Form() {
         console.log(res.data)
         setLoginUser([...loginUser, res.data]);
         setLoginValues(initialLoginValues);
-        // useHistory to reroute to appropriate page
       })
       .catch((err) => {
         console.log(err);
@@ -75,7 +76,6 @@ export default function Form() {
         console.log(res.data)
         setRegisterUser([...registerUser, res.data]);
         setRegisterValues(initialRegisterValues);
-        // useHistory to reroute to appropriate page
       })
       .catch((err) => {
         console.log(err);
@@ -153,6 +153,7 @@ export default function Form() {
       username: registerValues.username.trim(),
       email: registerValues.email.trim(),
       password: registerValues.password.trim(),
+      // confirmPassword: registerValues.confirmPassword.trim(),
     }
     postRegisterUser(newRegisterUser);
   }

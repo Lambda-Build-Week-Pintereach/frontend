@@ -50,7 +50,7 @@ export default function Login(props) {
             </label>
 
             {/* DISABLE BUTTON */}
-            <button id='submit' disabled={disabled} onClick={routeToApp}>Submit</button>
+            <button type="button" id='submit' disabled={disabled} onClick={routeToApp}>Submit</button>
 
         </form>
     )

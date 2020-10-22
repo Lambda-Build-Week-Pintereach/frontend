@@ -13,6 +13,7 @@ export default function Register(props){
 
     const onSubmit = (evt) => {
         evt.preventDefault();
+        routeToApp();
         submit();
     };
 
@@ -62,7 +63,7 @@ export default function Register(props){
                 </label>
 
                 {/* DISABLE BUTTON */}
-                <button id='submit' disabled={disabled} onClick={routeToApp}>Submit</button>
+                <button id='submit' disabled={disabled}>Submit</button>
 
             </form>
         </div>

@@ -13,6 +13,7 @@ export default function Login(props) {
 
     const onSubmit = (evt) => {
         evt.preventDefault();
+        routeToApp();
         submit();
     };
 
@@ -50,7 +51,7 @@ export default function Login(props) {
             </label>
 
             {/* DISABLE BUTTON */}
-            <button id='submit' disabled={disabled} onClick={routeToApp}>Submit</button>
+            <button id='submit' disabled={disabled}>Submit</button>
 
         </form>
     )

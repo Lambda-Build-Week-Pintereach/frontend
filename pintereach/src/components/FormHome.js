@@ -55,12 +55,11 @@ export default function Form() {
   // AUTHENTICATE USER AND RETURN TOKEN // 
   const postLoginUser = newLoginUser => {
     axios
-      .post('https://pintereach1.herokuapp.com/api/login', newLoginUser)
+      .post('https://pintereach0.herokuapp.com/api/auth/login', newLoginUser)
       .then((res) => {
         console.log(res.data)
         setLoginUser([...loginUser, res.data]);
         setLoginValues(initialLoginValues);
-        // useHistory to reroute to appropriate page
       })
       .catch((err) => {
         console.log(err);
@@ -70,12 +69,11 @@ export default function Form() {
  // CREATE USER AND RETURN TOKEN //
   const postRegisterUser = newRegisterUser => {
     axios
-      .post('https://pintereach1.herokuapp.com/api/register', newRegisterUser)
+      .post('https://pintereach0.herokuapp.com/api/auth/register', newRegisterUser)
       .then((res) => {
         console.log(res.data)
         setRegisterUser([...registerUser, res.data]);
         setRegisterValues(initialRegisterValues);
-        // useHistory to reroute to appropriate page
       })
       .catch((err) => {
         console.log(err);
@@ -145,6 +143,7 @@ export default function Form() {
       username: loginValues.username.trim(),
       password: loginValues.password.trim(),
     }
+    console.log(newLoginUser);
     postLoginUser(newLoginUser);
   }
 

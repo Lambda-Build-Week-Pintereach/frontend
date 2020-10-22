@@ -1,22 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
-// import "./index.css";
-import App from "./App";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose } from "redux";
-import logger from "redux-logger";
-import reducer from "./components/reducers";
-import thunk from "redux-thunk";
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import App from './App';
 
-const store = createStore(
-  reducer,
-  composeEnhancers(applyMiddleware(thunk, logger))
-);
 
 ReactDOM.render(
-  <Provider store={store}>
+  <BrowserRouter>
     <App />
-  </Provider>,
-  document.getElementById("root")
+    </BrowserRouter>,
+  document.getElementById('root')
 );

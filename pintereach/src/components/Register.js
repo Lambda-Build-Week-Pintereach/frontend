@@ -13,6 +13,7 @@ export default function Register(props){
 
     const onSubmit = (evt) => {
         evt.preventDefault();
+        routeToApp();
         submit();
     };
 
@@ -29,7 +30,6 @@ export default function Register(props){
             <div className="errors">{errors.username}</div>
             <div className="errors">{errors.email}</div>
             <div className="errors">{errors.password}</div>
-            {/* <div className="error">{errors.confirmPassword}</div> */}
 
             {/* TEXT INPUTS */}
                 <label>Username:
@@ -61,18 +61,9 @@ export default function Register(props){
                     id="password"
                     />
                 </label>
-                {/* <label>Confirm Password:
-                    <input 
-                    value={values.confirmPassword}
-                    onChange={onChange}
-                    name="confirmPassword"
-                    type="password"
-                    id="confirmPassword"
-                    />
-                </label> */}
 
                 {/* DISABLE BUTTON */}
-                <button type="button" id='submit' disabled={disabled} onClick={routeToApp}>Submit</button>
+                <button id='submit' disabled={disabled}>Submit</button>
 
             </form>
         </div>

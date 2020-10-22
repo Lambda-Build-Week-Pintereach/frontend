@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Login from './Login';
 import Signup from './Register';
+import Joke from './Jokes'
 import loginSchema from '../validation/LoginSchema';
 import registerSchema from '../validation/RegisterSchema';
 import * as yup from 'yup';
@@ -57,7 +58,7 @@ export default function Form() {
   // AUTHENTICATE USER AND RETURN TOKEN // 
   const postLoginUser = newLoginUser => {
     axios
-      .post('https://pintereach1.herokuapp.com/api/login', newLoginUser)
+      .post('https://pintereach0.herokuapp.com/api/auth/login', newLoginUser)
       .then((res) => {
         console.log(res.data)
         setLoginUser([...loginUser, res.data]);
@@ -71,7 +72,7 @@ export default function Form() {
  // CREATE USER AND RETURN TOKEN //
   const postRegisterUser = newRegisterUser => {
     axios
-      .post('https://pintereach1.herokuapp.com/api/register', newRegisterUser)
+      .post('https://pintereach0.herokuapp.com/api/auth/register', newRegisterUser)
       .then((res) => {
         console.log(res.data)
         setRegisterUser([...registerUser, res.data]);
@@ -84,7 +85,7 @@ export default function Form() {
 
   // FETCH JOKE //
   useEffect(() => {
-    axios.get('https://official-joke-api.appspot.com/random_joke')
+    axios.get('https://official-joke-api.appspot.com/random_ten')
       .then(res => {
         setJokes(res.data)
       })
@@ -153,7 +154,6 @@ export default function Form() {
       username: registerValues.username.trim(),
       email: registerValues.email.trim(),
       password: registerValues.password.trim(),
-      // confirmPassword: registerValues.confirmPassword.trim(),
     }
     postRegisterUser(newRegisterUser);
   }
@@ -202,9 +202,14 @@ export default function Form() {
       </div>
       <div className="joke-container">
         <div className="joke-wrapper">
-            <p className="joke-title">Joke of the Day:</p>
-            <p className="joke">{jokes.setup}</p>
-            <p className="answer">{jokes.punchline}</p>
+          <h5 className="joke-title">Jokes</h5>
+            {jokes.map(jokes => {
+            return <Joke 
+            key={jokes.id} 
+            setup={jokes.setup}
+            punchline={jokes.punchline}
+            />
+            })}
         </div>
       </div>
     </div>

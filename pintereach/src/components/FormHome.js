@@ -3,7 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Login from './Login';
 import Signup from './Register';
-import Joke from './Jokes'
+import Joke from './Joke'
 import loginSchema from '../validation/LoginSchema';
 import registerSchema from '../validation/RegisterSchema';
 import * as yup from 'yup';

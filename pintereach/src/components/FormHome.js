@@ -8,6 +8,7 @@ import registerSchema from '../validation/RegisterSchema';
 import * as yup from 'yup';
 import '../App.css';
 
+
 // INITAL VALUES OF LOGIN FORM // STEP 1
 const initialLoginValues = {
   username: '',

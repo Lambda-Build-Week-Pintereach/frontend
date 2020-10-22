@@ -7,13 +7,11 @@ import {Editarticle} from './components/EditArticle';
 import {Detailarticle} from './components/DetailArticle';
 import FormHome from "./components/FormHome";
 import { GlobalProvider } from './components/reducers/GlobalContext';
-
 function App() {
   return (
     <GlobalProvider>
        <header className="text-center"><h5>Pintereach</h5></header>
        <Switch>
-
         <Route path="/" component={Listarticle} exact/>
         <Route path="/create" component={Createarticle} exact/>
         <Route path="/edit/:id" component={Editarticle} exact/>
@@ -22,6 +20,4 @@ function App() {
     </GlobalProvider>
   );
 }
-
 export default App;
-

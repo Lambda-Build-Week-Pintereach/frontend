@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css'
 // import { useHistory } from "react-router-dom";
 
-export default function Signup(props){
+export default function Register(props){
     const { values, submit, change, disabled, errors } = props;
 
     // const history = useHistory()
@@ -56,7 +56,7 @@ export default function Signup(props){
                     value={values.password}
                     onChange={onChange}
                     name="password"
-                    type="text"
+                    type="password"
                     id="password"
                     />
                 </label>

@@ -142,7 +142,8 @@ button.active{
     padding-bottom: 10px;
     border-bottom: solid 2px #b62b18;
 }
-  /* NAVBAR STYLING */
+  /*APP STYLING */
+   /* NAVBAR */
   .navbar {
     margin: 0 auto;
     display: flex;
@@ -160,17 +161,6 @@ button.active{
     padding: 5px;
     margin: 0 30px;
   }
-  
-  .articles > .article-card {
-    border: 1px solid #00000057;
-    padding: 5px;
-    margin: 5px auto;
-    width: 95%;
-  }
-
-  
-
-  
   .navbar > h1 {
     padding: 0;
     font-weight: 600;
@@ -179,6 +169,25 @@ button.active{
     align-items: center;
     margin: 0;
   }
+  
+  .articles > .article-card {
+    border: 1px solid #00000057;
+    padding: 5px;
+    margin: 5px auto;
+    width: 95%;
+  }
+
+  .text-center > h5{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-size: 2.75rem;
+    background-color: #b62b18;
+    color: white;
+  }
+
+  
+
  
   .home {
     width: 42rem;
@@ -196,29 +205,20 @@ button.active{
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
-  
- 
-
-  
-
- 
-
-  
   .category {
     width: 380px;
     background-color: #fff;
   }
-  
   
   .profile button {
     width: 150px;
     margin-top: 10px;
   }
   
- 
-
-  
-
+  /* CREATE ARTICLE  */
+  /* DETAIL ARTICLE  */
+  /* EDIT ARTICLE */
+  /* LIST ARTICLE */
   
 
  

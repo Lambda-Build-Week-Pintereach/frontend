@@ -10,14 +10,14 @@ html, body, body * {
 
 /* LOGIN & REGISTER FORM STYLING */
 body {
-    /* background-image: url("images/pic03.jpg"); */
+    /* background-image: url("./images/pic03.jpg"); */
     background-size: cover;
     background-position: center center;
 }
 .container {
     width: 100%;
     padding-top: 60px;
-    padding-bottom: 100pxx;
+    padding-bottom: 100px;
 }
 .login-register-wrapper {
     height: 500px;
@@ -99,8 +99,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: space-evenly;
-  height: 250px;
+  /* justify-content: space-evenly; */
+  height: 750px;
   width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -113,12 +113,14 @@ button:hover {
 }
 .joke-title{
   font-size: 22px;
+  padding: 10px;
 }
 .joke{
-  font-size: 18px;
+  font-size: 15px;
+  padding: 5px;
 }
 .answer{
-  color:rgb(156, 20, 27);
+  color: rgb(99, 26, 32);
 }
 
 /* NAVBAR BUTTONS */
@@ -181,7 +183,7 @@ button.active{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #b62b18;
+    background-color: rgb(156, 20, 27);
   }
   .text-center > h5 {
     padding-top: 20px;

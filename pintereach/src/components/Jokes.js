@@ -5,9 +5,8 @@ const Joke = props => {
 
     return (
         <div>
-            <h5>Jokes</h5>
-            <p>Joke: {setup}</p>
-            <p>Answer: {punchline}</p>
+            <p className="joke">Joke: {setup}</p>
+            <p className="answer">Answer: {punchline}</p>
         </div>
     )
 }

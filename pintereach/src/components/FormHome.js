@@ -25,11 +25,13 @@ const initialRegisterValues = {
   username: '',
   email: '',
   password: '',
+  // confirmPassword: '',
 }
 const initialRegisterErrors = {
   username: '',
   email: '',
   password: '',
+  // confirmPassword: '',
 }
 const initialRegisteredDisabled = true
 
@@ -144,7 +146,6 @@ export default function Form() {
       username: loginValues.username.trim(),
       password: loginValues.password.trim(),
     }
-    console.log(newLoginUser);
     postLoginUser(newLoginUser);
   }
 
@@ -201,6 +202,7 @@ export default function Form() {
       </div>
       <div className="joke-container">
         <div className="joke-wrapper">
+          <h5 className="joke-title">Jokes</h5>
             {jokes.map(jokes => {
             return <Joke 
             key={jokes.id} 

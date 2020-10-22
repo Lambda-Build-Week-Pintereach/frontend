@@ -27,7 +27,7 @@ export const GlobalProvider = ({ children }) => {
             payload: article
         })
         axiosWithAuth()
-        .post(`https://pintereach0.herokuapp.com/api/articles/${id}`)
+        .post(`https://pintereach0.herokuapp.com/api/articles/`)
         .then(res => {
             console.log(res)})
         

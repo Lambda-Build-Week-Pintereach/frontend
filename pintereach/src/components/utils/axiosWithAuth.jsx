@@ -1,12 +1,12 @@
 import axios from "axios";
 
 export const axiosWithAuth = () => {
-  const token = localStorage.getItem("token");
-
+  
+  console.log(localStorage.getItem('token'))
   return axios.create({
-    headers: {
-      Authorization: token,
-    },
-    baseURL: "https://pintereach0.herokuapp.com/",
-  });
-};
+      headers: {
+          "content-type": "application/json",
+          Authorization: localStorage.getItem('token')
+      }
+  })
+}

@@ -8,11 +8,6 @@ import loginSchema from '../validation/LoginSchema';
 import registerSchema from '../validation/RegisterSchema';
 import * as yup from 'yup';
 import '../App.css';
-import styled from 'styled-components';
-
-const StyledJokes = styled.div`
-  color: black;
-`
 
 // INITAL VALUES OF LOGIN FORM //
 const initialLoginValues = {
@@ -90,15 +85,14 @@ export default function Form() {
 
   // FETCH JOKES //
   useEffect(() => {
-    axios.get('https://official-joke-api.appspot.com/random_joke')
+    axios.get('https://official-joke-api.appspot.com/random_ten')
       .then(res => {
-        // setJokes(res.data)
-        console.log(res.data)
+        setJokes(res.data)
       })
       .catch((err) => {
         console.log(err)
       })
-  } ,[])
+  }, [])
 
   // HELPER FUNCTIONS //
   const loginInputChange = (name, value) => {
@@ -204,7 +198,7 @@ export default function Form() {
             change={registerInputChange}
             />
           </Route>
-          <StyledJokes>
+          <div className="jokes">
             {jokes.map(jokes => {
               return <Jokes 
               key={jokes.id}
@@ -212,7 +206,7 @@ export default function Form() {
               punchline={jokes.punchline}
               />
             })}
-          </StyledJokes>
+          </div>
         </div>
       </div>
     </div>

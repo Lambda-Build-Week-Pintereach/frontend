@@ -5,7 +5,7 @@ import {Listarticle} from './components/ListArticle';
 import {Createarticle} from './components/CreateArticle';
 import {Editarticle} from './components/EditArticle';
 import {Detailarticle} from './components/DetailArticle';
-import FormHome from "./components/FormHome";
+import FormHome from './components/FormHome';
 import { GlobalProvider } from './components/reducers/GlobalContext';
 function App() {
   return (

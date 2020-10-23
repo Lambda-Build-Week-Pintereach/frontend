@@ -12,7 +12,7 @@ function App() {
     <GlobalProvider>
       <header className="text-center">
         <h5>Pintereach</h5>
-        <Link to="login"><button className="loginBtn">Login / Register</button></Link>
+        {/* <Link to="login"><button className="loginBtn">Login / Register</button></Link> */}
       </header>
        <Switch>
         <Route path="/login" component={FormHome}/>
